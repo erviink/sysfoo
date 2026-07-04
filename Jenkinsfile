@@ -49,6 +49,9 @@ mvn versions:commit'''
 
         stage('dockerBP') {
           agent any
+          environment {
+            BRANCH_NAME = 'main'
+          }
           steps {
             script {
               docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin')

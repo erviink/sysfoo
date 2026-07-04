@@ -49,8 +49,8 @@ mvn versions:commit'''
 
         stage('dockerBP') {
           agent any
-          environment {
-            BRANCH_NAME = 'main'
+          when { 
+            branch 'main'
           }
           steps {
             script {
